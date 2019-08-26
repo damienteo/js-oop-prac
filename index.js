@@ -13,6 +13,8 @@ console.log("hello world!");
 //   }
 // };
 
+// factory function
+
 function createCircle(radius) {
   return {
     radius,
@@ -23,3 +25,14 @@ function createCircle(radius) {
 }
 
 const circle = createCircle(5);
+
+//constructor function
+
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = () => {
+    console.log(`The radius of this circle is ${this.radius}`);
+  };
+}
+
+const anotherCircle = new Circle(5);
