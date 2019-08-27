@@ -33,14 +33,30 @@ function Circle(radius) {
 
   let defaultLocation = { x: 0, y: 0 };
 
+  let shownDefaultProperty = { show: "showing" };
+
   let computeOptimumLocation = factor => {
     console.log("computing optimum location", factor);
+  };
+
+  this.getDefaultLocation = () => {
+    return defaultLocation;
   };
 
   this.draw = () => {
     computeOptimumLocation(0.1);
     console.log(`The radius of this circle is ${this.radius}`);
   };
+
+  Object.defineProperty(this, "shownDefaultProperty", {
+    get: function() {
+      return shownDefaultProperty;
+    },
+    set: function(value) {
+      if (!value) throw new Error("invalid value");
+      shownDefaultProperty = { show: value };
+    }
+  });
 }
 
 const anotherCircle = new Circle(5);
