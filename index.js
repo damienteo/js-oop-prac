@@ -19,7 +19,7 @@ function createCircle(radius) {
   return {
     radius,
     draw: () => {
-      console.log("drawing");
+      console.log(`the radius of this circle is ${radius}`);
     }
   };
 }
@@ -36,3 +36,8 @@ function Circle(radius) {
 }
 
 const anotherCircle = new Circle(5);
+
+const propertyName = "location";
+anotherCircle[propertyName] = { x: 1 };
+
+delete anotherCircle.location;
