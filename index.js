@@ -40,4 +40,14 @@ const anotherCircle = new Circle(5);
 const propertyName = "location";
 anotherCircle[propertyName] = { x: 1 };
 
-delete anotherCircle.location;
+for (let key in anotherCircle) {
+  if (typeof anotherCircle[key] !== "function")
+    console.log(key, anotherCircle[key]);
+}
+
+const keys = Object.keys(circle);
+console.log("keys", keys);
+
+if ("radius" in circle) console.log("circle has a radius");
+
+// delete anotherCircle.location;
