@@ -30,7 +30,15 @@ const circle = createCircle(5);
 
 function Circle(radius) {
   this.radius = radius;
+
+  let defaultLocation = { x: 0, y: 0 };
+
+  let computeOptimumLocation = factor => {
+    console.log("computing optimum location", factor);
+  };
+
   this.draw = () => {
+    computeOptimumLocation(0.1);
     console.log(`The radius of this circle is ${this.radius}`);
   };
 }
